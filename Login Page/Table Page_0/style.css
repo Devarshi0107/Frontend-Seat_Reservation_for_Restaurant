@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Protest+Riot&family=Recursive:wght@600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #EAE7DC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    flex-direction: column;
+}
+
+header {
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    margin-top:6px;
+    
+    font-size: 2.0em;
+    color: #e85a4f;
+    user-select: none;
+    font-family: "Merienda", cursive;
+    font-family: "Protest Riot", sans-serif;
+    font-family: "Recursive", sans-serif;
+}
+
+.search-bar {
+    padding: 8px;
+    margin-right: 60px;
+    border: 1px solid #e85a4f;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}
+
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #e85a4f;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #e85a4f;
+    font-weight: 500;
+    
+    transition: 0.5s;
+}
+
+.btnLogin-popup:hover {
+    background: black;
+    color: #e85a4f;
+}
+
+.image-container {
+    margin-top: 40px; /* Adjust the margin as needed */
+}
+
+.image-container img {
+    height: 600px;
+    width: 1500px;
+    border-radius: 10px;
+    filter: brightness(80%);
+}
+
+
+.restaurant-info-box,
+.booking-box {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #e85a4f;
+    border-radius: 10px;
+}
+
+.restaurant-info-box h1,
+.booking-box h1 {
+    color: #e85a4f;
+}
+
+.restaurant-info-box {
+    align-self: center; 
+    
+    
+}
+
+.restaurant-info-box h1{
+    font-size: 50px;
+}
+
+.booking-box {
+    align-self: center; 
+    
+    padding: 50px;
+}
+
+.booking-box h1 {
+    font-size: 50px;
+}
+
+.booking-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-box label {
+    margin-top: 15px;
+    font-size: 1.2em;
+    color: #e85a4f;
+}
+
+.booking-box input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #e85a4f;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+}
+
+.btnBookTable {
+    width: 150px;
+    height: 50px;
+    background: #e85a4f;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.btnBookTable:hover {
+    background: black;
+}
+
+/* Add this to your existing CSS */
+.rAting {
+    font-size: 1.2em;
+    color: #f5b042;
+}
+
+
+/* Add this to your existing CSS */
+
+.menu {
+    margin-top: 20px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.item-name {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #333;
+}
+
+.item-price {
+    font-size: 1.2em;
+    color: #e85a4f;
+}
+
+/* Add this to your existing CSS */
+
+.user-reviews {
+    margin-top: 20px;
+}
+
+.review {
+    margin-bottom: 20px;
+}
+
+.user-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #e85a4f;
+}
+
+.rating {
+    font-size: 1.2em;
+    color: #f5b042;
+}
+
+.review-text {
+    font-size: 1em;
+    color: #333;
+}
+
+/* Add this to your existing CSS */
+
+/*.recommended-restaurants {
+    margin-top: 40px;
+  }
+  
+  .restaurant-slider-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .restaurant-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .restaurant {
+    width: 300px;
+    margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .restaurant img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+
+  }
+  
+  .restaurant-content {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .restaurant h3 {
+    margin: 0;
+  }
+  
+  .slider-prev,
+  .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+  
+  .slider-prev:hover,
+  .slider-next:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .slider-prev {
+    left: 10px;
+  }
+  
+  .slider-next {
+    right: 10px;
+  }
+
+  /* Add this to your existing CSS */
+
+/*.image-box {
+    overflow: hidden;
+    
+    height: auto;
+    max-height: 1000px; /* Adjust as needed */
+ /*   transition: max-height 0.5s ease-in-out;
+  }
+  
+  .restaurant-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  /* Rest of the CSS remains unchanged */
+  

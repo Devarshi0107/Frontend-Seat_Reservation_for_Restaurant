@@ -1,0 +1,221 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Restaurant</title>
+<link rel="stylesheet" href="1.css" />
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+<script src="1.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+  
+<body>
+<header>
+  <h2 class="logo">BOOK MY TABLE</h2>
+  <nav class="navigation">
+    <input type="text" class="search-bar" placeholder="Search here..." />
+    <button class="btnLogin-popup">Logout</button>
+  </nav>
+</header>
+<center><h1 style="color: white;">restaurant name</h1></center>
+
+<div class="Table_book">
+  <h2>Table Booking</h2>
+  <section class="table-selection">
+    
+    <div class="tables">
+      <div class="table-row">
+        <div class="table">
+          <div class="topseat" data-seat-name="Seat 1"></div>
+          <div class="topseat" data-seat-name="Seat 2"></div>
+          <div class="topseat" data-seat-name="Seat 3"></div>
+          <div class="topseat" data-seat-name="Seat 4"></div>
+          <div class="table-top"></div>
+          <div class="table-seats">
+            <div class="seat" data-seat-name="Seat 5"></div>               
+            <div class="seat" data-seat-name="Seat 6"></div>              
+            <div class="seat" data-seat-name="Seat 7"></div>              
+            <div class="seat" data-seat-name="Seat 8"></div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="booking-box">
+  <h2>Make a reservation</h2>
+  <br />
+  <form id="bookingForm">
+    <label for="partySize">Number Of Persons:</label>
+    <input type="number" id="partySize" name="partySize" min="1" required />
+    
+    <label for="date">Date:</label>
+    <div class="date">
+    <input type="date" id="date" name="date" required />
+    </div>
+
+    <label for="time">Time:</label>
+    <div class="time-slot-container">      
+      <select id="timeSelect" name="timeSelect">
+        <option value="5-6">5:00 - 6:00 PM</option>
+        <option value="7-8">7:00 - 8:00 PM</option>
+        <option value="9-10">9:00 - 10:00 PM</option>
+        <option value="10-11">10:00 - 11:00 PM</option>
+      </select>
+    </div>
+
+    <button type="button" class="btnBookTable" id="bookTableBtn">Book Table</button> 
+  </form>
+</div>
+
+<script>
+document.getElementById('bookTableBtn').addEventListener('click', async () => {
+  const partySize = document.getElementById('partySize').value;
+  const date = document.getElementById('date').value;
+  const time = document.getElementById('timeSelect').value;
+  
+  // Get selected seat (assuming there's a variable called 'selectedSeat')
+  const selectedSeat = document.querySelector('.selected');
+  
+  if (!selectedSeat) {
+    alert('Please select a seat.');
+    return;
+  }
+  
+  const seatName = selectedSeat.dataset.seatName;
+
+  try {
+    // Send data to backend
+    const response = await axios.post('/book-table', { partySize, date, time, seatName });
+    
+    // Update frontend UI (e.g., display confirmation message)
+    alert('Table booked successfully!');
+    
+    // Reset form or do any other necessary UI updates
+  } catch (error) {
+    console.error('Error booking table:', error);
+    alert('An error occurred while booking the table. Please try again later.');
+  }
+});
+</script>
+</body>
+</html> -->
+
+<!-- working with integrating front end and backend -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Restaurant</title>
+<link rel="stylesheet" href="1.css" />
+</head>
+<body>
+<header>
+  <h2 class="logo">BOOK MY TABLE</h2>
+  <nav class="navigation">
+    <input type="text" class="search-bar" placeholder="Search here..." />
+    <button class="btnLogin-popup">Logout</button>
+  </nav>
+</header>
+<center><h1 style="color: white;">Restaurant Name</h1></center>
+
+<div class="Table_book">
+  <h2>Table Booking</h2>
+  <section class="table-selection">
+    <div class="tables">
+      <div class="table-row">
+        <div class="table">
+          <div class="topseat" data-seat-name="Seat 1"></div>
+          <div class="topseat" data-seat-name="Seat 2"></div>
+          <div class="topseat" data-seat-name="Seat 3"></div>
+          <div class="topseat" data-seat-name="Seat 4"></div>
+          <div class="table-top"></div>
+          <div class="table-seats">
+            <div class="seat" data-seat-name="Seat 5"></div>               
+            <div class="seat" data-seat-name="Seat 6"></div>              
+            <div class="seat" data-seat-name="Seat 7"></div>              
+            <div class="seat" data-seat-name="Seat 8"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Booking Box -->
+<div class="booking-box">
+  <h2>Make a reservation</h2>
+  <br />
+  <form id="bookingForm">
+    <label for="partySize">Number Of Persons:</label>
+    <input type="number" id="partySize" name="partySize" min="1" required />
+    
+    <label for="date">Date:</label>
+    <div class="date">
+      <input type="date" id="date" name="date" required />
+    </div>
+
+    <label for="time">Time:</label>
+    <div class="time-slot-container">      
+      <select id="timeSelect" name="timeSelect">
+        <option value="5-6">5:00 - 6:00 PM</option>
+        <option value="7-8">7:00 - 8:00 PM</option>
+        <option value="9-10">9:00 - 10:00 PM</option>
+        <option value="10-11">10:00 - 11:00 PM</option>
+      </select>
+    </div>
+
+    <button type="button" class="btnBookTable" id="bookTableBtn">Book Table</button>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="1.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetchReservations();
+
+    document.querySelectorAll('.seat').forEach(seat => {
+      seat.addEventListener('click', function() {
+        if (this.classList.contains('booked')) {
+          alert('Seat already booked.');
+          return;
+        }
+        this.classList.toggle('selected');
+      });
+    });
+
+    document.getElementById('bookTableBtn').addEventListener('click', async () => {
+      const partySize = document.getElementById('partySize').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('timeSelect').value;
+      
+      const selectedSeat = document.querySelector('.selected');
+      
+      if (!selectedSeat) {
+        alert('Please select a seat.');
+        return;
+      }
+      
+      const seatName = selectedSeat.dataset.seatName;
+
+      try {
+        const response = await axios.post('/restaurants/123/book-seat', { name: 'John Doe', date, timeSlot: time, seatNumber: seatName });
+        
+        alert('Table booked successfully!');
+        // Optionally reload the page after booking
+        // location.reload();
+      } catch (error) {
+        console.error('Error booking table:', error);
+        alert('An error occurred while booking the table. Please try again later.');
+      }
+    });
+  });
+</script>
+</body>
+</html>
